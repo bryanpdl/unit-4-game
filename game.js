@@ -1,16 +1,19 @@
 
+
 // Variables for different value possibilites
 
 
 var givenArr = [36, 28, 41, 33, 22, 27, 38, 65, 52, 19];
 
-var circArr = [ 7, 2, 11, 17, 9, 6, 3];
+var circArr = [ 7, 2, 3, 19, 9, 6, 3];
 
-var sqrArr = [ 3, 16, 8, 13, 1, 7, 2, 9];
+var sqrArr = [ 3, 5, 8, 13, 1, 7, 2, 9];
 
-var dmdArr = [ 5, 12, 10, 3, 7, 1, 6, 17,];
+var dmdArr = [ 5, 8, 10, 3, 7, 1, 6, 17,];
 
 var hrglassArr = [ 4, 15, 11, 9, 1, 16, 8, 3];
+
+var winExclaimArr = ["Sick!", "Superb!", "Amazing.", "Amaze-balls.", "Marvelous!"];
 
 var circNum;
 
@@ -33,8 +36,6 @@ var losses = 0;
 
 function init() {
 
-    
-
 givenNum = givenArr[Math.floor(Math.random() * givenArr.length)];
 console.log(givenNum);
 
@@ -44,6 +45,8 @@ circNum = circArr[Math.floor(Math.random() * circArr.length)];
 sqrNum = sqrArr[Math.floor(Math.random() * sqrArr.length)];
 dmdNum = sqrArr[Math.floor(Math.random() * dmdArr.length)];
 hrglassNum = sqrArr[Math.floor(Math.random() * hrglassArr.length)];
+
+
 
 
     
@@ -101,6 +104,11 @@ hrglassNum = sqrArr[Math.floor(Math.random() * hrglassArr.length)];
         console.log("win");
         wins++
         $('#winNum').text("Wins: " + wins);
+        winNotif =  winExclaimArr[Math.floor(Math.random() *  winExclaimArr.length)];
+        $('#winExc').text(winNotif);
+        setTimeout(function(){
+            document.getElementById("winExc").innerHTML = '';
+        }, 2000);
         init();
         
     } 
@@ -109,7 +117,7 @@ hrglassNum = sqrArr[Math.floor(Math.random() * hrglassArr.length)];
 
 init();
 
-    
+
 
 
 
